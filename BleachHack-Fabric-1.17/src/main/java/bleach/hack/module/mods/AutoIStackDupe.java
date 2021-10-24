@@ -88,8 +88,8 @@ public class AutoIStackDupe extends Module {
 
     @BleachSubscribe
     public void onSendPacket(EventSendPacket event) {
-        //if (((MountBypass) ModuleManager.getModule("MountBypass")).dontCancel)
-        //    return;
+        if (((MountBypass) ModuleManager.getModule("MountBypass")).dontCancel)
+            return;
 
         if (event.getPacket() instanceof PlayerInteractEntityC2SPacket
                 && PlayerInteractEntityC2SUtils.getEntity(
@@ -200,10 +200,10 @@ public class AutoIStackDupe extends Module {
                         }
                     }
                 } else {
-                    //((MountBypass) ModuleManager.getModule("MountBypass")).dontCancel = true;
+                    ((MountBypass) ModuleManager.getModule("MountBypass")).dontCancel = true;
                     mc.player.networkHandler.sendPacket(
                             PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
-                    //((MountBypass) ModuleManager.getModule("MountBypass")).dontCancel = false;
+                    ((MountBypass) ModuleManager.getModule("MountBypass")).dontCancel = false;
                     return;
                 }
             }
