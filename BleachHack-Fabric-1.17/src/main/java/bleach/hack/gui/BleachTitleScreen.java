@@ -137,13 +137,13 @@ public class BleachTitleScreen extends WindowScreen {
 				}));
 
 		// Update Text
-		JsonObject updateJson = BleachHack.getUpdateJson();
+		/*sonObject updateJson = BleachHack.getUpdateJson();
 		if (updateJson != null && updateJson.has("version") && updateJson.get("version").getAsInt() > BleachHack.INTVERSION) {
 			getWindow(0).addWidget(new WindowTextWidget("\u00a76\u00a7nUpdate\u00a76", true, 4, h - 12, 0xffffff)
 					.withClickEvent(widget -> {
 						client.setScreen(new UpdateScreen(client.currentScreen, updateJson));
 					}));
-		}
+		}*/
 	}
 
 	@Override

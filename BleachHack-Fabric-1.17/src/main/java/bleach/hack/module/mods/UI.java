@@ -247,7 +247,7 @@ public class UI extends Module {
 			if (watermarkMode == 0) {
 				moduleListText.add(0, BleachHack.watermark.getText().append(new LiteralText(" " + BleachHack.VERSION).styled(s -> s.withColor(TextColor.fromRgb(0xf0f0f0)))));
 			} else {
-				moduleListText.add(0, new LiteralText("\u00a7a> BleachHack " + BleachHack.VERSION));
+				moduleListText.add(0, new LiteralText("\u00a7a> CrystalHack " + BleachHack.VERSION));
 			}
 		}
 

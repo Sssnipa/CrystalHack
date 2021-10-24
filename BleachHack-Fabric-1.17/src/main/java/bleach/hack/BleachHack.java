@@ -38,7 +38,7 @@ public class BleachHack implements ModInitializer {
 
 	private static BleachHack instance = null;
 
-	public static final String VERSION = "1.3";
+	public static final String VERSION = "1.0";
 	public static final int INTVERSION = 36;
 	public static Watermark watermark;
 
@@ -57,7 +57,7 @@ public class BleachHack implements ModInitializer {
 
 	public BleachHack() {
 		if (instance != null) {
-			throw new RuntimeException("A BleachHack instance already exists.");
+			throw new RuntimeException("A CrystalHack instance already exists.");
 		}
 	}
 
@@ -66,7 +66,7 @@ public class BleachHack implements ModInitializer {
 		long initStartTime = System.currentTimeMillis();
 
 		if (instance != null) {
-			throw new RuntimeException("BleachHack has already been initialized.");
+			throw new RuntimeException("CrystalHack has already been initialized.");
 		}
 
 		instance = this;
@@ -108,7 +108,7 @@ public class BleachHack implements ModInitializer {
 			BleachTitleScreen.customTitleScreen = false;
 		}
 
-		BleachLogger.logger.log(Level.INFO, "Loaded BleachHack in %d ms.", System.currentTimeMillis() - initStartTime);
+		BleachLogger.logger.log(Level.INFO, "Loaded CrystalHack in %d ms.", System.currentTimeMillis() - initStartTime);
 	}
 
 	public static JsonObject getUpdateJson() {

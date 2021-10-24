@@ -18,7 +18,7 @@ import bleach.hack.util.io.BleachFileHelper;
 public class CmdPrefix extends Command {
 
 	public CmdPrefix() {
-		super("prefix", "Sets the BleachHack command prefix.", "prefix <prefix>", CommandCategory.MISC);
+		super("prefix", "Sets the CrystalHack command prefix.", "prefix <prefix>", CommandCategory.MISC);
 	}
 
 	@Override
