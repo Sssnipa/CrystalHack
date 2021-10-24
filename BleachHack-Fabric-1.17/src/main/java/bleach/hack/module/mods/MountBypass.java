@@ -11,10 +11,14 @@ import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 
 public class MountBypass extends Module {
 
+    /**
+     * i got this code from <a>https://github.com/CUPZYY/BleachHack-CupEdition/blob/master/CupEdition-1.17/src/main/java/bleach/hack/module/mods/MountBypass.java</a>.
+     */
+
     public boolean dontCancel = false;
 
     public MountBypass() {
-        super("MountBypass", KEY_UNBOUND, ModuleCategory.EXPLOITS, "Bypasses illegalstack on non bungeecord servers");
+        super("MountBypass", KEY_UNBOUND, ModuleCategory.CRYSTALHACK, "Bypasses illegalstack on non bungeecord servers");
     }
 
     @Subscribe
