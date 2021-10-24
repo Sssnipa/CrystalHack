@@ -52,7 +52,7 @@ public class UpdateScreen extends WindowScreen {
 	private String updateResult = "";
 
 	public UpdateScreen(Screen parent, JsonObject updateJson) {
-		super(new LiteralText("BleachHack Update Available"));
+		super(new LiteralText("CrystalHack Update Available"));
 		this.parent = parent;
 		this.updateJson = updateJson;
 	}
@@ -65,12 +65,12 @@ public class UpdateScreen extends WindowScreen {
 		addWindow(new Window(width / 2 - wd,
 				height / 16,
 				width / 2 + wd,
-				height - height / 16, String.format("BleachHack Update [%s -> %s]", BleachHack.VERSION, updateJson.get("name").getAsString()), new ItemStack(Items.MAGENTA_GLAZED_TERRACOTTA)));
+				height - height / 16, String.format("CrystalHack Update [%s -> %s]", BleachHack.VERSION, updateJson.get("name").getAsString()), new ItemStack(Items.MAGENTA_GLAZED_TERRACOTTA)));
 
 		int w = getWindow(0).x2 - getWindow(0).x1;
 		int h = getWindow(0).y2 - getWindow(0).y1;
 
-		getWindow(0).addWidget(new WindowTextWidget("A new BleachHack update is available.", true, WindowTextWidget.TextAlign.MIDDLE, 1.5f, w / 2, 18, 0xe0e0e0));
+		getWindow(0).addWidget(new WindowTextWidget("A new CrystalHack update is available.", true, WindowTextWidget.TextAlign.MIDDLE, 1.5f, w / 2, 18, 0xe0e0e0));
 		getWindow(0).addWidget(new WindowBoxWidget(3, 50, w - 3, h - 23));
 
 		ImmutablePairList<String, Boolean> changelog = new ImmutablePairList<>();
@@ -108,7 +108,7 @@ public class UpdateScreen extends WindowScreen {
 
 		getWindow(0).addWidget(
 				new WindowButtonWidget(3, h - 21, w / 2 - 2, h - 3, "Website", () -> {
-					Util.getOperatingSystem().open(URI.create("https://bleachhack.org/"));
+					Util.getOperatingSystem().open(URI.create("https://github.com/VoxerioMC/CrystalHack/releases/"));
 				}));
 
 		getWindow(0).addWidget(
