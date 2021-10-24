@@ -38,7 +38,7 @@ public class AutoArmor extends Module {
 
 	public AutoArmor() {
 		super("AutoArmor", KEY_UNBOUND, ModuleCategory.PLAYER, "Automatically equips armor.",
-				new SettingToggle("AntiBreak", false).withDesc("Unequips your armor when its about to break."),
+				new SettingToggle("AntiBreak", false).withDesc("Unequipsz your armor when its about to break."),
 				new SettingToggle("PreferElytra", false).withDesc("Equips elytras instead of chestplates when possible."),
 				new SettingToggle("Delay", true).withDesc("Adds a delay between equipping armor pieces.").withChildren(
 						new SettingSlider("Delay", 0, 20, 1, 0).withDesc("How many ticks between putting on armor pieces.")));
