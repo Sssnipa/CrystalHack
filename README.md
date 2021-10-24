@@ -1,5 +1,5 @@
 
-# BleachHack
+# CrystalHack
 ![](https://img.shields.io/github/downloads/bleachdrinker420/BleachHack/total?style=flat-square)
 ![](https://img.shields.io/tokei/lines/github/BleachDrinker420/BleachHack?style=flat-square)
 ![](https://img.shields.io/github/languages/code-size/bleachdrinker420/BleachHack?style=flat-square)
@@ -7,7 +7,8 @@
 ![](https://img.shields.io/badge/daily%20commit-yes-blue?style=flat-square)
 ![](https://img.shields.io/discord/620600892718055434?style=flat-square)
 
-Obama approved Minecraft utility mod for Fabric 1.17.
+BleahHack based Utility mod for 1.17.
+Approved by Obama
 
 > Website: https://bleachhack.org/  
 > Discord: https://bleachhack.org/discord
