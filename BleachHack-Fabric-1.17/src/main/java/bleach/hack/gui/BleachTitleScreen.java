@@ -72,7 +72,7 @@ public class BleachTitleScreen extends WindowScreen {
 		addWindow(new Window(width / 8,
 				height / 8,
 				width - width / 8,
-				height - height / 8, "BleachHack", new ItemStack(Items.MUSIC_DISC_CAT)));
+				height - height / 8, "CrystalHack", new ItemStack(Items.MUSIC_DISC_CAT)));
 
 		int w = getWindow(0).x2 - getWindow(0).x1;
 		int h = getWindow(0).y2 - getWindow(0).y1;
@@ -110,7 +110,7 @@ public class BleachTitleScreen extends WindowScreen {
 					MutableText bhText = new LiteralText("");
 
 					int i = 0;
-					for (char c: "BleachHack".toCharArray()) {
+					for (char c: "CrystalHack".toCharArray()) {
 						int fi = i++;
 						bhText.append(
 								new LiteralText(String.valueOf(c)).styled(s -> s.withColor(TextColor.fromRgb(UI.getRainbowFromSettings(fi)))));

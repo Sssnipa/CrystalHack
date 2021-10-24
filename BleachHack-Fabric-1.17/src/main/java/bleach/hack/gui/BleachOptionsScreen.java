@@ -29,7 +29,7 @@ public class BleachOptionsScreen extends WindowScreen {
 	private WindowScrollbarWidget scrollbar;
 
 	public BleachOptionsScreen(Screen parent) {
-		super(new LiteralText("BleachHack Options"));
+		super(new LiteralText("CrystalHack Options"));
 		this.parent = parent;
 	}
 

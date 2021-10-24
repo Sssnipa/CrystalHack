@@ -97,7 +97,7 @@ public class CmdBetterChat extends Command {
 			if (args[1].equalsIgnoreCase("current")) {
 				BleachLogger.info("Current suffix: \"" + chat.suffix + "\"");
 			} else if (args[1].equalsIgnoreCase("reset")) {
-				chat.suffix = " \u25ba \u0432\u029f\u0454\u03b1c\u043d\u043d\u03b1c\u043a";
+				chat.suffix = "  | ᴄʀʏsᴛᴀʟʜᴀᴄᴋ";
 				BleachFileHelper.saveMiscSetting("betterChatSuffix", new JsonPrimitive(chat.suffix));
 				BleachLogger.info("Reset the customchat suffix!");
 			} else if (args[1].equalsIgnoreCase("set") && args.length >= 3) {

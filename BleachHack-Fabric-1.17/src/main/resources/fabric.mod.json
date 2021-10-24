@@ -1,16 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "bleachhack",
+  "id": "crystal-blachhack",
   "version": "${version}",
 
-  "name": "BleachHack",
+  "name": "CrystalHack",
   "description": "gamer obama utility mod",
   "authors": [
-    "Bleach"
+    "Bleach",
+    "JohanDev // Voxerio"
   ],
   "contact": {
     "homepage": "https://bleachhack.org/",
-    "sources": "https://github.com/BleachDrinker420/BleachHack"
+    "sources": "https://github.com/VoxerioMC/CrystalHack"
   },
 
   "license": "CC0-1.0",
