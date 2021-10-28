@@ -16,5 +16,5 @@ public enum ModuleCategory {
 	EXPLOITS,
 	MISC,
 	WORLD,
-	CRYSTALHACK
+	CRYSTAL
 }
