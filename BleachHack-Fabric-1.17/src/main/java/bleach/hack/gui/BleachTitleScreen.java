@@ -8,23 +8,15 @@
  */
 package bleach.hack.gui;
 
-import java.net.http.HttpResponse.BodyHandlers;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
-
-import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
-
 import bleach.hack.BleachHack;
+import bleach.hack.gui.effect.ParticleManager;
+import bleach.hack.gui.window.Window;
 import bleach.hack.gui.window.WindowScreen;
 import bleach.hack.gui.window.widget.WindowButtonWidget;
 import bleach.hack.gui.window.widget.WindowTextWidget;
-import bleach.hack.gui.effect.ParticleManager;
-import bleach.hack.gui.window.Window;
 import bleach.hack.module.mods.UI;
 import bleach.hack.util.io.BleachFileHelper;
-import bleach.hack.util.io.BleachOnlineMang;
+import com.google.gson.JsonPrimitive;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.gui.screen.TitleScreen;
@@ -52,12 +44,8 @@ public class BleachTitleScreen extends WindowScreen {
 	private static int splashTicks;
 
 	static {
-		BleachOnlineMang.getResourceAsync("splashes.txt", BodyHandlers.ofLines()).thenAccept(st -> {
-			if (st != null) {
-				List<String> list = st.collect(Collectors.toList());
-				splash = list.get(new Random().nextInt(list.size()));
-			}
-		});
+		// Splash Title
+		splash = "dsc.gg/CrystalHack";
 	}
 
 	public BleachTitleScreen() {
