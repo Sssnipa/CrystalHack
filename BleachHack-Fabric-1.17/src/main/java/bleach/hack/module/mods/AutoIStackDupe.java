@@ -8,21 +8,15 @@
  */
 package bleach.hack.module.mods;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.lwjgl.glfw.GLFW;
-
-import bleach.hack.eventbus.BleachSubscribe;
-
 import bleach.hack.event.events.EventSendPacket;
 import bleach.hack.event.events.EventTick;
+import bleach.hack.eventbus.BleachSubscribe;
 import bleach.hack.module.Module;
 import bleach.hack.module.ModuleCategory;
 import bleach.hack.module.ModuleManager;
-import bleach.hack.setting.base.SettingMode;
-import bleach.hack.setting.base.SettingSlider;
-import bleach.hack.setting.base.SettingToggle;
+import bleach.hack.module.setting.base.SettingMode;
+import bleach.hack.module.setting.base.SettingSlider;
+import bleach.hack.module.setting.base.SettingToggle;
 import bleach.hack.util.BleachLogger;
 import bleach.hack.util.PlayerInteractEntityC2SUtils;
 import bleach.hack.util.PlayerInteractEntityC2SUtils.InteractType;
@@ -39,6 +33,10 @@ import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket.Mode;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.util.Hand;
+import org.lwjgl.glfw.GLFW;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AutoIStackDupe extends Module {
 

@@ -108,6 +108,9 @@ public class MixinClientPlayerEntity extends AbstractClientPlayerEntity {
 		}
 	}
 
+	/**
+	 * @author
+	 */
 	@Overwrite
 	public void swingHand(Hand hand) {
 		EventSwingHand event = new EventSwingHand(hand);
@@ -128,6 +131,9 @@ public class MixinClientPlayerEntity extends AbstractClientPlayerEntity {
 						&& ModuleManager.getModule("Scaffold").getSetting(8).asToggle().state);
 	}
 
+	/**
+	 * @author
+	 */
 	@Overwrite
 	public float getMountJumpStrength() {
 		return ModuleManager.getModule("EntityControl").isEnabled()

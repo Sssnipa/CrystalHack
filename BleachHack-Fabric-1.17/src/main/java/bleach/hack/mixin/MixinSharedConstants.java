@@ -18,6 +18,9 @@ import net.minecraft.SharedConstants;
 @Mixin(SharedConstants.class)
 public class MixinSharedConstants {
 
+	/**
+	 * @author
+	 */
 	@Overwrite
 	public static boolean isValidChar(char chr) {
 		Module noKeyBlock = ModuleManager.getModule("NoKeyBlock");
