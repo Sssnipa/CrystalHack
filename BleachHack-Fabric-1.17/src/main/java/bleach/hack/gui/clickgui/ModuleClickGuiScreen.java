@@ -8,17 +8,13 @@
  */
 package bleach.hack.gui.clickgui;
 
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
-
 import bleach.hack.BleachHack;
 import bleach.hack.command.Command;
 import bleach.hack.gui.clickgui.window.ClickGuiWindow;
 import bleach.hack.gui.clickgui.window.ModuleWindow;
 import bleach.hack.gui.window.Window;
-import bleach.hack.module.ModuleCategory;
 import bleach.hack.module.Module;
+import bleach.hack.module.ModuleCategory;
 import bleach.hack.module.ModuleManager;
 import bleach.hack.util.io.BleachFileHelper;
 import net.minecraft.SharedConstants;
@@ -27,6 +23,10 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.LiteralText;
+
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
 
 public class ModuleClickGuiScreen extends ClickGuiScreen {
 
@@ -71,7 +71,7 @@ public class ModuleClickGuiScreen extends ClickGuiScreen {
 				30, 146, len, "World", new ItemStack(Items.GRASS_BLOCK)));
 
 		addWindow(new ModuleWindow(ModuleManager.getModulesInCat(ModuleCategory.CRYSTALHACK),
-				30, 158, len, "CrystalHack", new ItemStack(Items.END_CRYSTAL)));
+				30, 158, len, "Hack", new ItemStack(Items.END_CRYSTAL)));
 
 		for (Window w: getWindows()) {
 			if (w instanceof ClickGuiWindow) {

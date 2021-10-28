@@ -18,7 +18,7 @@ public class MountBypass extends Module {
     public boolean dontCancel = false;
 
     public MountBypass() {
-        super("MountBypass", KEY_UNBOUND, ModuleCategory.CRYSTAL, "Bypasses illegalstack on non bungeecord servers");
+        super("MountBypass", KEY_UNBOUND, ModuleCategory.CRYSTALHACK, "Bypasses illegalstack on non bungeecord servers");
     }
 
     @Subscribe

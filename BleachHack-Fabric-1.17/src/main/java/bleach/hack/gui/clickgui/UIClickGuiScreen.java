@@ -8,7 +8,6 @@
  */
 package bleach.hack.gui.clickgui;
 
-import java.util.Arrays;
 import bleach.hack.gui.clickgui.window.ModuleWindow;
 import bleach.hack.gui.clickgui.window.UIContainer;
 import bleach.hack.gui.clickgui.window.UIWindow;
@@ -19,6 +18,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.LiteralText;
+
+import java.util.Arrays;
 
 public class UIClickGuiScreen extends ClickGuiScreen {
 

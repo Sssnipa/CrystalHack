@@ -8,18 +8,18 @@
  */
 package bleach.hack.gui.clickgui;
 
+import bleach.hack.gui.clickgui.window.ClickGuiWindow;
+import bleach.hack.gui.window.Window;
+import bleach.hack.gui.window.WindowScreen;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.text.Text;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.tuple.Triple;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.tuple.Triple;
-import bleach.hack.gui.window.WindowScreen;
-import bleach.hack.gui.clickgui.window.ClickGuiWindow;
-import bleach.hack.gui.window.Window;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.text.Text;
 
 public abstract class ClickGuiScreen extends WindowScreen {
 
@@ -49,7 +49,7 @@ public abstract class ClickGuiScreen extends WindowScreen {
 		super.render(matrices, mouseX, mouseY, delta);
 
 		matrices.push();
-		matrices.translate(0, 0, 250);
+		matrices.translate(0, 0, 250); //250
 
 		for (Window w : getWindows()) {
 			if (w instanceof ClickGuiWindow) {

@@ -51,7 +51,7 @@ public class AutoIStackDupe extends Module {
     private boolean firstFrameSneak = false;
 
     public AutoIStackDupe() {
-        super("AutoIStackDupe", KEY_UNBOUND, ModuleCategory.CRYSTAL, "Automatically does the illegalstack dupe (PRESS ESCAPE TO CANCEL)",
+        super("AutoIStackDupe", KEY_UNBOUND, ModuleCategory.CRYSTALHACK, "Automatically does the illegalstack dupe (PRESS ESCAPE TO CANCEL)",
                 new SettingSlider("Limit", 1, 15, 15, 0).withDesc("Max chests to dupe"),
                 new SettingMode("Mode", "Instant", "Single").withDesc("Whether to dupe all at once one chest per tick"),
                 new SettingToggle("Shulkers Only", true).withDesc("Only dupe shulkers"));
