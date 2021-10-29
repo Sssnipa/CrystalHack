@@ -99,7 +99,7 @@ public class BleachCreditsScreen extends WindowScreen {
 		getWindow(0).addWidget(new WindowTextWidget("- CrystalHack Dev -", true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 195, 0xe0e0e0));
 		int y = 210;
 		getWindow(0).addWidget(new WindowTextWidget(
-				new LiteralText("JohanDev").styled(s -> s.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new LiteralText("\u00a7fCrystalHack Developer\n\n\u00a77https://github.com/VoxerioMC\n\u00a77https://github.com/JohanDevv")))),
+				new LiteralText("JohanDev").styled(s -> s.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new LiteralText("\u00a7fCrystalHack Developer\n\n\u00a77https://github.com/JohanDevv")))),
 				true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 210, 0x00a0a0));
 
 		for (WindowWidget widget: getWindow(0).getWidgets()) {

@@ -15,12 +15,12 @@ import net.minecraft.util.Util;
 public class StarGithub extends Module {
 
 	public StarGithub() {
-		super("StarGithub", KEY_UNBOUND, ModuleCategory.MISC, "I need to feed my 420 children pls star github.");
+		super("StarGithub", KEY_UNBOUND, ModuleCategory.CRYSTALHACK, "just star it its cool i guess.");
 	}
 
 	public void onEnable(boolean inWorld) {
 		try {
-			Util.getOperatingSystem().open("https://github.com/BleachDrinker420/BleachHack");
+			Util.getOperatingSystem().open("https://github.com/JohanDevv/CrystalHack");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
