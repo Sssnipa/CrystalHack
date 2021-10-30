@@ -101,6 +101,9 @@ public class BleachCreditsScreen extends WindowScreen {
 		getWindow(0).addWidget(new WindowTextWidget(
 				new LiteralText("JohanDev").styled(s -> s.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new LiteralText("\u00a7fCrystalHack Developer\n\n\u00a77https://github.com/JohanDevv")))),
 				true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 210, 0x00a0a0));
+		getWindow(0).addWidget(new WindowTextWidget(
+				new LiteralText("Sssnipa").styled(s -> s.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new LiteralText("\u00a7fEmotional Support & Ideas")))),
+				true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 222, 0x00a0a0));
 
 		for (WindowWidget widget: getWindow(0).getWidgets()) {
 			if (!(widget instanceof WindowScrollbarWidget)) {

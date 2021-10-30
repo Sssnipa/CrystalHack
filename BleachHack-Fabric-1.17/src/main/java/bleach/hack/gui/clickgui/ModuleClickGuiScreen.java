@@ -70,9 +70,6 @@ public class ModuleClickGuiScreen extends ClickGuiScreen {
 		addWindow(new ModuleWindow(ModuleManager.getModulesInCat(ModuleCategory.WORLD),
 				30, 146, len, "World", new ItemStack(Items.GRASS_BLOCK)));
 
-		addWindow(new ModuleWindow(ModuleManager.getModulesInCat(ModuleCategory.CRYSTALHACK),
-				30, 158, len, "Hack", new ItemStack(Items.END_CRYSTAL)));
-
 		for (Window w: getWindows()) {
 			if (w instanceof ClickGuiWindow) {
 				((ClickGuiWindow) w).hiding = true;

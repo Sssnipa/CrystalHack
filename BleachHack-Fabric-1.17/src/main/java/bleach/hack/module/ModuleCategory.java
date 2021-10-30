@@ -15,6 +15,5 @@ public enum ModuleCategory {
 	MOVEMENT,
 	EXPLOITS,
 	MISC,
-	WORLD,
-	CRYSTALHACK
+	WORLD
 }

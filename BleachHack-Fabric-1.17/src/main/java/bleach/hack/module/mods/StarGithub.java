@@ -15,7 +15,7 @@ import net.minecraft.util.Util;
 public class StarGithub extends Module {
 
 	public StarGithub() {
-		super("StarGithub", KEY_UNBOUND, ModuleCategory.CRYSTALHACK, "just star it its cool i guess.");
+		super("StarGithub", KEY_UNBOUND, ModuleCategory.MISC, "just star it its cool i guess.");
 	}
 
 	public void onEnable(boolean inWorld) {

@@ -21,7 +21,7 @@ import java.util.List;
 public class AutoCraft extends Module {
 
     public AutoCraft(){
-        super("AutoCraft", KEY_UNBOUND, ModuleCategory.CRYSTALHACK, "Automatically craft things.",
+        super("AutoCraft", KEY_UNBOUND, ModuleCategory.MISC, "Automatically craft things.",
                 new SettingItemList("Edit Items", "Items you want to craft.").withDesc("Edit crafting items."),
                 new SettingToggle("Anti desync", false).withDesc("Try to prevent inventory desync."),
                 new SettingToggle("Craft all", false).withDesc("Crafts maximum possible amount amount per craft (shift-clicking)"),
@@ -49,9 +49,9 @@ public class AutoCraft extends Module {
         for (RecipeResultCollection recipeResultCollection : recipeResultCollectionList) {
             for (Recipe<?> recipe : recipeResultCollection.getRecipes(true)) {
                 if (!getSetting(0).asList(Item.class).contains(recipe.getOutput().getItem())) continue;
-                mc.interactionManager.clickRecipe(currentScreenHandler.syncId, recipe, craftAll);
-                mc.interactionManager.clickSlot(currentScreenHandler.syncId, 0, 1,
-                        drop ? SlotActionType.THROW : SlotActionType.QUICK_MOVE, mc.player);
+                    mc.interactionManager.clickRecipe(currentScreenHandler.syncId, recipe, craftAll);
+                    mc.interactionManager.clickSlot(currentScreenHandler.syncId, 0, 1,
+                            drop ? SlotActionType.THROW : SlotActionType.QUICK_MOVE, mc.player);
             }
         }
     }

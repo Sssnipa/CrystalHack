@@ -16,12 +16,17 @@ import java.util.Random;
 
 public class AutoEz extends Module {
 
+    /**
+     * taken from BlaechHack-CupEdtion
+     */
+
+
     private Random rand = new Random();
     private List<String> lines = new ArrayList<>();
     private int lineCount = 0;
 
     public AutoEz(){
-        super("AutoEz", KEY_UNBOUND, ModuleCategory.CRYSTALHACK, "Sends a message when you kill someone.",
+        super("AutoEz", KEY_UNBOUND, ModuleCategory.MISC, "Sends a message when you kill someone.",
                 new SettingMode("Msg", "Toxic", "Custom", "Friendly").withDesc("Send a chat message when you kill someone"),
                 new SettingMode("Read", "Random", "Order").withDesc("How to read the custom ezmessage"));
     }
