@@ -1,6 +1,6 @@
 
 # CrystalHack
-![](f)
+![](https://img.shields.io/github/downloads/JohanDevv/CrystalHack/total?style=flat-square)
 ![](https://img.shields.io/tokei/lines/github/JohanDevv/CrystalHack?style=flat-square)
 ![](https://img.shields.io/github/languages/code-size/JohanDevv/CrystalHack?style=flat-square)
 ![](https://img.shields.io/github/last-commit/JohanDevv/CrystalHack?style=flat-square)
