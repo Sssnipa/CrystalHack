@@ -54,7 +54,7 @@ public class AutoEz extends Module {
                         if (getSetting(0).asMode().mode == 0) {
                             mc.player.sendChatMessage(e.getName().getString() + " Just got EZed by CrystalHack");
                         } else if (getSetting(0).asMode().mode == 2) {
-                            mc.player.sendChatMessage(e.getName().getString() + "is good but, " + "but CrystalHack is better!");
+                            mc.player.sendChatMessage(e.getName().getString() + " is good but, " + "but CrystalHack is better!");
                         } else if (getSetting(0).asMode().mode == 1) {
                             if (getSetting(1).asMode().mode == 0) {
                                 mc.player.sendChatMessage(lines.get(rand.nextInt(lines.size())).replace("$p", e.getName().getString()));
