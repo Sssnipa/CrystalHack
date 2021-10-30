@@ -5,7 +5,7 @@
 ![](https://img.shields.io/github/languages/code-size/JohanDevv/CrystalHack?style=flat-square)
 ![](https://img.shields.io/github/last-commit/JohanDevv/CrystalHack?style=flat-square)
 ![](https://img.shields.io/badge/daily%20commit-yes-blue?style=flat-square)
-![](https://img.shields.io/discord/620600892718055434?style=flat-square)
+![](https://img.shields.io/discord/903339460513636404?style=flat-square)
 
 BleahHack based Utility mod for 1.17.
 Approved by Obama
