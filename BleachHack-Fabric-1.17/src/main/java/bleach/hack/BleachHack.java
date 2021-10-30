@@ -8,9 +8,6 @@
  */
 package bleach.hack;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
 import bleach.hack.command.CommandManager;
 import bleach.hack.command.CommandSuggestor;
 import bleach.hack.eventbus.BleachEventBus;
@@ -26,19 +23,20 @@ import bleach.hack.util.io.BleachFileHelper;
 import bleach.hack.util.io.BleachFileMang;
 import bleach.hack.util.io.BleachJsonHelper;
 import bleach.hack.util.io.BleachOnlineMang;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.SharedConstants;
+import org.apache.logging.log4j.Level;
 
 import java.net.http.HttpResponse.BodyHandlers;
 import java.util.concurrent.CompletableFuture;
-
-import org.apache.logging.log4j.Level;
 
 public class BleachHack implements ModInitializer {
 
 	private static BleachHack instance = null;
 
-	public static final String VERSION = "1.0";
+	public static final String VERSION = "1.0.1";
 	public static final int INTVERSION = 36;
 	public static Watermark watermark;
 
