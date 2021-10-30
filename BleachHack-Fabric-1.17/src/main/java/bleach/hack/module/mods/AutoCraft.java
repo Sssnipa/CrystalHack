@@ -14,6 +14,10 @@ import net.minecraft.screen.slot.SlotActionType;
 
 import java.util.List;
 
+/**
+ * Ported from meteor rejects
+ */
+
 public class AutoCraft extends Module {
 
     public AutoCraft(){
