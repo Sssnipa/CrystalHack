@@ -1,17 +1,17 @@
 
 # CrystalHack
-![](https://img.shields.io/github/downloads/bleachdrinker420/BleachHack/total?style=flat-square)
-![](https://img.shields.io/tokei/lines/github/BleachDrinker420/BleachHack?style=flat-square)
-![](https://img.shields.io/github/languages/code-size/bleachdrinker420/BleachHack?style=flat-square)
-![](https://img.shields.io/github/last-commit/bleachdrinker420/BleachHack?style=flat-square)
+![](https://img.shields.io/github/downloads/JohanDevv/CrystalHack/total?style=flat-square)
+![](https://img.shields.io/tokei/lines/github/JohanDevv/CrystalHack?style=flat-square)
+![](https://img.shields.io/github/languages/code-size/JohanDevv/CrystalHack?style=flat-square)
+![](https://img.shields.io/github/last-commit/JohanDevv/CrystalHack?style=flat-square)
 ![](https://img.shields.io/badge/daily%20commit-yes-blue?style=flat-square)
 ![](https://img.shields.io/discord/620600892718055434?style=flat-square)
 
 BleahHack based Utility mod for 1.17.
 Approved by Obama
 
-> Website: https://bleachhack.org/  
-> Discord: https://bleachhack.org/discord
+> Website: https://github.com/JohanDevv/CrystalHack  
+> Discord: https://dsc.gg/CrystalHack
 
 ## Showcase
 <details>
