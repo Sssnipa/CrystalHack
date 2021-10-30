@@ -124,6 +124,8 @@ public class AutoIStackDupe extends Module {
 
         if (firstFrameSneak) {
             mc.player.networkHandler.sendPacket(new ClientCommandC2SPacket(mc.player, Mode.RELEASE_SHIFT_KEY));
+            mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, true, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
+            mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
             firstFrameSneak = false;
             return;
         }
@@ -172,6 +174,8 @@ public class AutoIStackDupe extends Module {
             } else {
                 mc.player.closeHandledScreen();
                 mc.player.networkHandler.sendPacket(new ClientCommandC2SPacket(mc.player, Mode.PRESS_SHIFT_KEY));
+                mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, true, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
+                mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
                 firstFrameSneak = true;
             }
         } else if (!(mc.currentScreen instanceof HorseScreen)) {
@@ -203,8 +207,7 @@ public class AutoIStackDupe extends Module {
                     }
                 } else {
                     ((MountBypass) ModuleManager.getModule("MountBypass")).dontCancel = true;
-                    mc.player.networkHandler.sendPacket(
-                            PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
+                    mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
                     ((MountBypass) ModuleManager.getModule("MountBypass")).dontCancel = false;
                     return;
                 }
@@ -247,6 +250,8 @@ public class AutoIStackDupe extends Module {
 
         if (mc.player.currentScreenHandler.slots.size() == 46) {
             mc.player.networkHandler.sendPacket(new ClientCommandC2SPacket(mc.player, ClientCommandC2SPacket.Mode.PRESS_SHIFT_KEY));
+            mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, true, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
+            mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
         }
 
         if (mc.player.currentScreenHandler.slots.size() > 38) {
