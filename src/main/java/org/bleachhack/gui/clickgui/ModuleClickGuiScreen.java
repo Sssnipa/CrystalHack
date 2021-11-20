@@ -8,25 +8,26 @@
  */
 package org.bleachhack.gui.clickgui;
 
-import bleach.hack.BleachHack;
-import bleach.hack.command.Command;
-import bleach.hack.gui.clickgui.window.ClickGuiWindow;
-import bleach.hack.gui.clickgui.window.ModuleWindow;
-import bleach.hack.gui.window.Window;
-import bleach.hack.module.Module;
-import bleach.hack.module.ModuleCategory;
-import bleach.hack.module.ModuleManager;
-import bleach.hack.util.io.BleachFileHelper;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
+
+import org.bleachhack.BleachHack;
+import org.bleachhack.command.Command;
+import org.bleachhack.gui.clickgui.window.ClickGuiWindow;
+import org.bleachhack.gui.clickgui.window.ModuleWindow;
+import org.bleachhack.gui.window.Window;
+import org.bleachhack.module.Module;
+import org.bleachhack.module.ModuleCategory;
+import org.bleachhack.module.ModuleManager;
+import org.bleachhack.util.io.BleachFileHelper;
+
 import net.minecraft.SharedConstants;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.LiteralText;
-
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
 
 public class ModuleClickGuiScreen extends ClickGuiScreen {
 

@@ -1,16 +1,16 @@
-package bleach.hack.module.mods;
+package org.bleachhack.module.mods;
 
-import bleach.hack.event.events.EventTick;
-import bleach.hack.eventbus.BleachSubscribe;
-import bleach.hack.module.Module;
-import bleach.hack.module.ModuleCategory;
-import bleach.hack.module.setting.base.SettingToggle;
-import bleach.hack.module.setting.other.SettingItemList;
 import net.minecraft.client.gui.screen.recipebook.RecipeResultCollection;
 import net.minecraft.item.Item;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.screen.CraftingScreenHandler;
 import net.minecraft.screen.slot.SlotActionType;
+import org.bleachhack.event.events.EventTick;
+import org.bleachhack.eventbus.BleachSubscribe;
+import org.bleachhack.module.Module;
+import org.bleachhack.module.ModuleCategory;
+import org.bleachhack.module.setting.base.SettingToggle;
+import org.bleachhack.module.setting.other.SettingItemList;
 
 import java.util.List;
 

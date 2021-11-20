@@ -6,31 +6,33 @@
  * License, version 3. If a copy of the GPL was not distributed with this
  * file, You can obtain one at: https://www.gnu.org/licenses/gpl-3.0.txt
  */
-package bleach.hack;
+package org.bleachhack;
 
-import bleach.hack.command.CommandManager;
-import bleach.hack.command.CommandSuggestor;
-import bleach.hack.eventbus.BleachEventBus;
-import bleach.hack.gui.BleachTitleScreen;
-import bleach.hack.gui.option.Option;
-import bleach.hack.module.ModuleManager;
-import bleach.hack.module.mods.ClickGui;
-import bleach.hack.util.BleachLogger;
-import bleach.hack.util.BleachPlayerManager;
-import bleach.hack.util.FriendManager;
-import bleach.hack.util.Watermark;
-import bleach.hack.util.io.BleachFileHelper;
-import bleach.hack.util.io.BleachFileMang;
-import bleach.hack.util.io.BleachJsonHelper;
-import bleach.hack.util.io.BleachOnlineMang;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.SharedConstants;
-import org.apache.logging.log4j.Level;
 
 import java.net.http.HttpResponse.BodyHandlers;
 import java.util.concurrent.CompletableFuture;
+
+import org.apache.logging.log4j.Level;
+import org.bleachhack.command.CommandManager;
+import org.bleachhack.command.CommandSuggestor;
+import org.bleachhack.eventbus.BleachEventBus;
+import org.bleachhack.gui.BleachTitleScreen;
+import org.bleachhack.gui.option.Option;
+import org.bleachhack.module.ModuleManager;
+import org.bleachhack.module.mods.ClickGui;
+import org.bleachhack.util.BleachLogger;
+import org.bleachhack.util.BleachPlayerManager;
+import org.bleachhack.util.FriendManager;
+import org.bleachhack.util.Watermark;
+import org.bleachhack.util.io.BleachFileHelper;
+import org.bleachhack.util.io.BleachFileMang;
+import org.bleachhack.util.io.BleachJsonHelper;
+import org.bleachhack.util.io.BleachOnlineMang;
 
 public class BleachHack implements ModInitializer {
 
@@ -59,13 +61,10 @@ public class BleachHack implements ModInitializer {
 		}
 	}
 
+	//TODO: base-rewrite
 	@Override
 	public void onInitialize() {
 		long initStartTime = System.currentTimeMillis();
-
-		if (instance != null) {
-			throw new RuntimeException("CrystalHack has already been initialized.");
-		}
 
 		instance = this;
 		watermark = new Watermark();
@@ -74,23 +73,14 @@ public class BleachHack implements ModInitializer {
 		friendMang = new FriendManager();
 		playerMang = new BleachPlayerManager();
 
-		//TODO base-rewrite
 		//this.eventBus = new EventBus();
 		//this.bleachFileManager = new BleachFileMang();
+
 		BleachFileMang.init();
-
-		ModuleManager.loadModules(this.getClass().getClassLoader().getResourceAsStream("bleachhack.modules.json"));
-		BleachFileHelper.readModules();
-
-		ClickGui.clickGui.initWindows();
-		BleachFileHelper.readClickGui();
-		BleachFileHelper.readOptions();
-		BleachFileHelper.readFriends();
-		BleachFileHelper.readUI();
 		BleachFileHelper.startSavingExecutor();
 
-		CommandManager.loadCommands(this.getClass().getClassLoader().getResourceAsStream("bleachhack.commands.json"));
-		CommandSuggestor.start();
+		BleachFileHelper.readOptions();
+		BleachFileHelper.readFriends();
 
 		if (Option.PLAYERLIST_SHOW_AS_BH_USER.getValue()) {
 			playerMang.startPinger();
@@ -106,7 +96,25 @@ public class BleachHack implements ModInitializer {
 			BleachTitleScreen.customTitleScreen = false;
 		}
 
-		BleachLogger.logger.log(Level.INFO, "Loaded CrystalHack in %d ms.", System.currentTimeMillis() - initStartTime);
+		BleachLogger.logger.log(Level.INFO, "Loaded CrystalHack (Phase 1) in %d ms.", System.currentTimeMillis() - initStartTime);
+	}
+
+	// Called after most of the game has been initialized in MixinMinecraftClient so all game resources can be accessed
+	public void postInit() {
+		long initStartTime = System.currentTimeMillis();
+
+		ModuleManager.loadModules(this.getClass().getClassLoader().getResourceAsStream("bleachhack.modules.json"));
+		BleachFileHelper.readModules();
+
+		// TODO: move ClickGui and UI to phase 1
+		ClickGui.clickGui.initWindows();
+		BleachFileHelper.readClickGui();
+		BleachFileHelper.readUI();
+
+		CommandManager.loadCommands(this.getClass().getClassLoader().getResourceAsStream("bleachhack.commands.json"));
+		CommandSuggestor.start();
+
+		BleachLogger.logger.log(Level.INFO, "Loaded CrystalHack (Phase 2) in %d ms.", System.currentTimeMillis() - initStartTime);
 	}
 
 	public static JsonObject getUpdateJson() {

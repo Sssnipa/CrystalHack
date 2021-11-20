@@ -1,14 +1,15 @@
-package bleach.hack.module.mods;
+package org.bleachhack.module.mods;
 
-import bleach.hack.event.events.EventReadPacket;
-import bleach.hack.event.events.EventTick;
-import bleach.hack.eventbus.BleachSubscribe;
-import bleach.hack.module.Module;
-import bleach.hack.module.ModuleCategory;
-import bleach.hack.module.setting.base.SettingToggle;
-import bleach.hack.util.BleachLogger;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.network.packet.s2c.play.EntityStatusS2CPacket;
+import org.bleachhack.event.events.EventReadPacket;
+import org.bleachhack.event.events.EventTick;
+import org.bleachhack.eventbus.BleachSubscribe;
+import org.bleachhack.module.Module;
+import org.bleachhack.module.ModuleCategory;
+import org.bleachhack.module.setting.base.SettingToggle;
+import org.bleachhack.util.BleachLogger;
 
 import java.util.HashMap;
 

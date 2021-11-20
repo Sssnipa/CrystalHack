@@ -10,8 +10,9 @@ package org.bleachhack.command.commands;
 
 import java.util.Locale;
 
-import org.apache.commons.lang3.StringUtils;
 import org.bleachhack.BleachHack;
+
+import org.apache.commons.lang3.StringUtils;
 import org.bleachhack.command.Command;
 import org.bleachhack.command.CommandCategory;
 import org.bleachhack.command.exception.CmdSyntaxException;

@@ -8,16 +8,16 @@
  */
 package org.bleachhack.gui.clickgui;
 
-import bleach.hack.gui.clickgui.window.ModuleWindow;
-import bleach.hack.gui.clickgui.window.UIContainer;
-import bleach.hack.gui.clickgui.window.UIWindow;
-import bleach.hack.module.ModuleManager;
-import bleach.hack.util.io.BleachFileHelper;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.LiteralText;
+import org.bleachhack.gui.clickgui.window.ModuleWindow;
+import org.bleachhack.gui.clickgui.window.UIContainer;
+import org.bleachhack.gui.clickgui.window.UIWindow;
+import org.bleachhack.module.ModuleManager;
+import org.bleachhack.util.io.BleachFileHelper;
 
 import java.util.Arrays;
 

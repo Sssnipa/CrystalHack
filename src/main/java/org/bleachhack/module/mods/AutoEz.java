@@ -1,13 +1,13 @@
-package bleach.hack.module.mods;
+package org.bleachhack.module.mods;
 
-import bleach.hack.event.events.EventReadPacket;
-import bleach.hack.eventbus.BleachSubscribe;
-import bleach.hack.module.Module;
-import bleach.hack.module.ModuleCategory;
-import bleach.hack.module.setting.base.SettingMode;
-import bleach.hack.util.io.BleachFileMang;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.packet.s2c.play.GameMessageS2CPacket;
+import org.bleachhack.event.events.EventReadPacket;
+import org.bleachhack.eventbus.BleachSubscribe;
+import org.bleachhack.module.Module;
+import org.bleachhack.module.ModuleCategory;
+import org.bleachhack.module.setting.base.SettingMode;
+import org.bleachhack.util.io.BleachFileMang;
 
 import java.util.ArrayList;
 import java.util.Arrays;

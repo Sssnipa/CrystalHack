@@ -50,11 +50,11 @@ public class MixinTitleScreen extends Screen {
 	@Inject(method = "init()V", at = @At("HEAD"))
 	private void init(CallbackInfo info) {
 		if (firstLoad) {
-			/*if (Option.GENERAL_SHOW_UPDATE_SCREEN.getValue()) {
+			if (Option.GENERAL_SHOW_UPDATE_SCREEN.getValue()) {
 				JsonObject updateJson = BleachHack.getUpdateJson();
 				if (updateJson != null && updateJson.has("version") && updateJson.get("version").getAsInt() > BleachHack.INTVERSION)
 					client.setScreen(new UpdateScreen(null, updateJson));
-			}*/
+			}
 
 			firstLoad = false;
 			return;

@@ -6,21 +6,24 @@
  * License, version 3. If a copy of the GPL was not distributed with this
  * file, You can obtain one at: https://www.gnu.org/licenses/gpl-3.0.txt
  */
-<<<<<<< HEAD
-package bleach.hack.module.mods;
+package org.bleachhack.module.mods;
 
-import bleach.hack.event.events.EventSendPacket;
-import bleach.hack.event.events.EventTick;
-import bleach.hack.eventbus.BleachSubscribe;
-import bleach.hack.module.Module;
-import bleach.hack.module.ModuleCategory;
-import bleach.hack.module.ModuleManager;
-import bleach.hack.module.setting.base.SettingMode;
-import bleach.hack.module.setting.base.SettingSlider;
-import bleach.hack.module.setting.base.SettingToggle;
-import bleach.hack.util.BleachLogger;
-import bleach.hack.util.PlayerInteractEntityC2SUtils;
-import bleach.hack.util.PlayerInteractEntityC2SUtils.InteractType;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.bleachhack.event.events.EventSendPacket;
+import org.bleachhack.event.events.EventTick;
+import org.bleachhack.eventbus.BleachSubscribe;
+import org.bleachhack.module.Module;
+import org.bleachhack.module.ModuleCategory;
+import org.bleachhack.module.ModuleManager;
+import org.bleachhack.module.setting.base.SettingMode;
+import org.bleachhack.module.setting.base.SettingSlider;
+import org.bleachhack.module.setting.base.SettingToggle;
+import org.bleachhack.util.BleachLogger;
+import org.bleachhack.util.PlayerInteractEntityC2SUtils;
+import org.lwjgl.glfw.GLFW;
+
 import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.client.gui.screen.ingame.HorseScreen;
 import net.minecraft.client.util.InputUtil;
@@ -34,16 +37,8 @@ import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket.Mode;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.util.Hand;
-import org.lwjgl.glfw.GLFW;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AutoIStackDupe extends Module {
-
-    /**
-     * i got this code from CUPZYY#1667 but idk if he made it.
-     */
 
     private AbstractDonkeyEntity entity;
     private List<Integer> slotsToMove = new ArrayList<>();
@@ -55,7 +50,8 @@ public class AutoIStackDupe extends Module {
         super("AutoIStackDupe", KEY_UNBOUND, ModuleCategory.EXPLOITS, "Automatically does the illegalstack dupe (PRESS ESCAPE TO CANCEL)",
                 new SettingSlider("Limit", 1, 15, 15, 0).withDesc("Max chests to dupe"),
                 new SettingMode("Mode", "Instant", "Single").withDesc("Whether to dupe all at once one chest per tick"),
-                new SettingToggle("Shulkers Only", true).withDesc("Only dupe shulkers"));
+                new SettingToggle("Shulkers Only", true).withDesc("Only dupe shulkers"),
+                new SettingSlider("Delay", 13, 20, 14, 0).withDesc("Adds delay to Dupe. (Very Buggy)"));
     }
 
     @Override
@@ -63,7 +59,7 @@ public class AutoIStackDupe extends Module {
         super.onEnable(inWorld);
 
         int chest = -1;
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < getSetting(3).asSlider().getValueInt(); i++) {
             if (mc.player.getInventory().getStack(i).getItem() == Items.CHEST) {
                 chest = i;
                 break;
@@ -79,106 +75,10 @@ public class AutoIStackDupe extends Module {
         if (!(mc.currentScreen instanceof HorseScreen)) {
             BleachLogger.info("Open a donkey gui to start");
         }
-=======
-<<<<<<<< HEAD:BleachHack-Fabric-1.17/src/main/java/bleach/hack/module/mods/AutoBruhDupe.java
-package bleach.hack.module.mods;
-import bleach.hack.eventbus.BleachSubscribe;
-import bleach.hack.event.events.EventTick;
-import bleach.hack.module.ModuleCategory;
-import bleach.hack.module.setting.other.SettingItemList;
-import bleach.hack.module.Module;
-import bleach.hack.util.BleachLogger;
-import bleach.hack.util.InventoryUtils;
-========
-package org.bleachhack.module.mods;
-
-import org.bleachhack.event.events.EventTick;
-import org.bleachhack.eventbus.BleachSubscribe;
-import org.bleachhack.module.Module;
-import org.bleachhack.module.ModuleCategory;
-import org.bleachhack.module.setting.other.SettingItemList;
-import org.bleachhack.util.BleachLogger;
-import org.bleachhack.util.InventoryUtils;
-
->>>>>>>> a5d4e4d6357a81030edf9ab6d9f7a336056f9fc7:src/main/java/org/bleachhack/module/mods/AutoIStackDupe.java
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.passive.AbstractDonkeyEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
-import net.minecraft.screen.HorseScreenHandler;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.slot.SlotActionType;
-import net.minecraft.util.Hand;
-
-<<<<<<<< HEAD:BleachHack-Fabric-1.17/src/main/java/bleach/hack/module/mods/AutoBruhDupe.java
-public class AutoBruhDupe extends Module {
-========
-public class AutoIStackDupe extends Module {
-	
-	private int tick = 0;
-
-	public AutoIStackDupe() {
-		super("AutoIStackDupe", KEY_UNBOUND, ModuleCategory.EXPLOITS, "Automatically does the IllegalStack dupe.",
-				new SettingItemList("Items", "Items to dupe",
-						Items.CHEST,
-						Items.BLACK_SHULKER_BOX,
-						Items.BLUE_SHULKER_BOX,
-						Items.BROWN_SHULKER_BOX,
-						Items.CYAN_SHULKER_BOX,
-						Items.GRAY_SHULKER_BOX,
-						Items.GREEN_SHULKER_BOX,
-						Items.LIGHT_BLUE_SHULKER_BOX,
-						Items.LIGHT_GRAY_SHULKER_BOX,
-						Items.LIME_SHULKER_BOX,
-						Items.MAGENTA_SHULKER_BOX,
-						Items.ORANGE_SHULKER_BOX,
-						Items.PINK_SHULKER_BOX,
-						Items.PURPLE_SHULKER_BOX,
-						Items.RED_SHULKER_BOX,
-						Items.WHITE_SHULKER_BOX,
-						Items.YELLOW_SHULKER_BOX,
-						Items.SHULKER_BOX));
-	}
-	
-	@Override
-	public void onDisable(boolean inWorld) {
-		tick = 0;
-		
-		super.onDisable(inWorld);
-	}
->>>>>>>> a5d4e4d6357a81030edf9ab6d9f7a336056f9fc7:src/main/java/org/bleachhack/module/mods/AutoIStackDupe.java
-
-    private int tick = 0;
-
-    public AutoBruhDupe() {
-        super("AutoBruhDupe", KEY_UNBOUND, ModuleCategory.EXPLOITS, "AutoBruhDupeAutoBruhDupeAutoBruhDupeAutoBruhDupe.",
-                new SettingItemList("Items", "Items to dupe",
-                        Items.CHEST,
-                        Items.BLACK_SHULKER_BOX,
-                        Items.BLUE_SHULKER_BOX,
-                        Items.BROWN_SHULKER_BOX,
-                        Items.CYAN_SHULKER_BOX,
-                        Items.GRAY_SHULKER_BOX,
-                        Items.GREEN_SHULKER_BOX,
-                        Items.LIGHT_BLUE_SHULKER_BOX,
-                        Items.LIGHT_GRAY_SHULKER_BOX,
-                        Items.LIME_SHULKER_BOX,
-                        Items.MAGENTA_SHULKER_BOX,
-                        Items.ORANGE_SHULKER_BOX,
-                        Items.PINK_SHULKER_BOX,
-                        Items.PURPLE_SHULKER_BOX,
-                        Items.RED_SHULKER_BOX,
-                        Items.WHITE_SHULKER_BOX,
-                        Items.YELLOW_SHULKER_BOX,
-                        Items.SHULKER_BOX));
->>>>>>> a5d4e4d6357a81030edf9ab6d9f7a336056f9fc7
     }
 
     @Override
     public void onDisable(boolean inWorld) {
-<<<<<<< HEAD
         entity = null;
         slotsToMove.clear();
         slotsToThrow.clear();
@@ -194,7 +94,7 @@ public class AutoIStackDupe extends Module {
                 && PlayerInteractEntityC2SUtils.getEntity(
                 (PlayerInteractEntityC2SPacket) event.getPacket()) instanceof AbstractDonkeyEntity
                 && PlayerInteractEntityC2SUtils.getInteractType(
-                (PlayerInteractEntityC2SPacket) event.getPacket()) == InteractType.INTERACT_AT) {
+                (PlayerInteractEntityC2SPacket) event.getPacket()) == PlayerInteractEntityC2SUtils.InteractType.INTERACT_AT) {
             event.setCancelled(true);
         }
     }
@@ -221,8 +121,7 @@ public class AutoIStackDupe extends Module {
 
         if (firstFrameSneak) {
             mc.player.networkHandler.sendPacket(new ClientCommandC2SPacket(mc.player, Mode.RELEASE_SHIFT_KEY));
-            mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, true, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
-            mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
+            mc.player.networkHandler.sendPacket(new ClientCommandC2SPacket(mc.player, Mode.PRESS_SHIFT_KEY));
             firstFrameSneak = false;
             return;
         }
@@ -235,6 +134,7 @@ public class AutoIStackDupe extends Module {
                 // Hand.MAIN_HAND));
                 // mc.interactionManager.interactEntityAtLocation(playerEntity_1, entity_1,
                 // entityHitResult_1, hand_1)
+                mc.player.networkHandler.sendPacket(new ClientCommandC2SPacket(mc.player, Mode.PRESS_SHIFT_KEY));
                 mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interact(entity, false, Hand.MAIN_HAND));
             } else {
                 int chest = -1;
@@ -271,8 +171,6 @@ public class AutoIStackDupe extends Module {
             } else {
                 mc.player.closeHandledScreen();
                 mc.player.networkHandler.sendPacket(new ClientCommandC2SPacket(mc.player, Mode.PRESS_SHIFT_KEY));
-                mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, true, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
-                mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
                 firstFrameSneak = true;
             }
         } else if (!(mc.currentScreen instanceof HorseScreen)) {
@@ -304,8 +202,10 @@ public class AutoIStackDupe extends Module {
                     }
                 } else {
                     ((MountBypass) ModuleManager.getModule("MountBypass")).dontCancel = true;
-                    mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
+                    mc.player.networkHandler.sendPacket(
+                            PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
                     ((MountBypass) ModuleManager.getModule("MountBypass")).dontCancel = false;
+                    mc.player.networkHandler.sendPacket(new ClientCommandC2SPacket(mc.player, Mode.PRESS_SHIFT_KEY));
                     return;
                 }
             }
@@ -346,9 +246,8 @@ public class AutoIStackDupe extends Module {
         }
 
         if (mc.player.currentScreenHandler.slots.size() == 46) {
+            mc.player.networkHandler.sendPacket(new ClientCommandC2SPacket(mc.player, Mode.PRESS_SHIFT_KEY));
             mc.player.networkHandler.sendPacket(new ClientCommandC2SPacket(mc.player, ClientCommandC2SPacket.Mode.PRESS_SHIFT_KEY));
-            mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, true, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
-            mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(entity, false, Hand.MAIN_HAND, entity.getBoundingBox().getCenter()));
         }
 
         if (mc.player.currentScreenHandler.slots.size() > 38) {
@@ -370,90 +269,4 @@ public class AutoIStackDupe extends Module {
         return mc.player.currentScreenHandler.slots.size() - 38;
     }
 
-=======
-        tick = 0;
-
-        super.onDisable(inWorld);
-    }
-    @BleachSubscribe
-    public void onTick(EventTick event) {
-        Entity e = mc.world.getOtherEntities(null, mc.player.getBoundingBox().expand(3), en -> !mc.player.isConnectedThroughVehicle(en) && en instanceof AbstractDonkeyEntity && ((AbstractDonkeyEntity) en).isTame()).stream().findFirst().orElse(null);
-        if (e == null)
-            return;
-        //BleachLogger.info(Integer.toString(tick));
-
-        if (tick == 0) {
-            if (((AbstractDonkeyEntity) e).hasChest()) {
-                tick++;
-                return;
-            }
-            Hand hand = InventoryUtils.selectSlot(true, i -> mc.player.getInventory().getStack(i).getItem() == Items.CHEST);
-            if (hand != null) {
-                mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interact(e, false, hand));
-                mc.player.interact(e, hand);
-                tick++;
-            } else if (mc.player.currentScreenHandler == mc.player.playerScreenHandler) {
-                BleachLogger.info("no chests left");
-                setEnabled(false);
-            }
-        } else if (tick == 1) {
-            tick++;
-        } else if (tick == 2) {
-            if (!((AbstractDonkeyEntity) e).hasChest()) {
-                tick = 0;
-                return;
-            }
-            if (mc.player.currentScreenHandler instanceof HorseScreenHandler) {
-                tick++;
-                return;
-            }
-            mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interact(e, true, Hand.MAIN_HAND));
-            mc.player.interact(e, Hand.MAIN_HAND);
-            tick++;
-        } else if (tick == 3) {
-            ScreenHandler sh = mc.player.currentScreenHandler;
-
-            if (!((AbstractDonkeyEntity) e).hasChest() || sh.slots.size() <= 38) {
-                tick = 0;
-                return;
-            }
-            if (sh instanceof HorseScreenHandler) {
-                int s = sh.slots.size() - 36;
-                for (int ds = 2; ds <= s; ds++) {
-                    if (!sh.getSlot(ds).hasStack()) {
-                        int slot = InventoryUtils.getSlot(false, i -> canDupe(mc.player.getInventory().getStack(i)));
-                        if (slot != -1) {
-                            mc.interactionManager.clickSlot(sh.syncId, (slot < 9 ? slot + s + 27 : slot + s - 9), 0, SlotActionType.QUICK_MOVE, mc.player);
-                            return;
-                        } else if (ds == 2) {
-                            return;
-                        } else {
-                            tick++;
-                            return;
-                        }
-                    }
-                }
-
-                tick++;
-            } else {
-                tick = 1;
-            }
-        } else if (tick == 4) {
-            //mc.player.closeHandledScreen();
-            mc.player.closeScreen();
-            tick++;
-        } else if (tick == 5) {
-            //mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interact(e, true, Hand.MAIN_HAND));
-            mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.interactAt(e, true, Hand.MAIN_HAND, mc.player.getPos()));
-            tick++;
-        } else {
-            tick++;
-            if (tick == 20)
-                tick = 0;
-        }
-    }
-    private boolean canDupe(ItemStack i) {
-        return getSetting(0).asList(Item.class).contains(i.getItem());
-    }
->>>>>>> a5d4e4d6357a81030edf9ab6d9f7a336056f9fc7
 }
