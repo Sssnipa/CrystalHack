@@ -8,8 +8,13 @@
  */
 package org.bleachhack.gui;
 
-import java.net.http.HttpResponse.BodyHandlers;
-
+import com.google.gson.JsonObject;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.text.HoverEvent;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.bleachhack.BleachHack;
 import org.bleachhack.gui.window.Window;
@@ -21,14 +26,7 @@ import org.bleachhack.util.collections.ImmutablePairList;
 import org.bleachhack.util.io.BleachJsonHelper;
 import org.bleachhack.util.io.BleachOnlineMang;
 
-import com.google.gson.JsonObject;
-
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.text.HoverEvent;
-import net.minecraft.text.LiteralText;
-import net.minecraft.text.Text;
+import java.net.http.HttpResponse.BodyHandlers;
 
 public class BleachCreditsScreen extends WindowScreen {
 
@@ -56,7 +54,7 @@ public class BleachCreditsScreen extends WindowScreen {
 	}
 
 	public BleachCreditsScreen() {
-		super(new LiteralText("BleachHack Credits"));
+		super(new LiteralText("CrystalHack Credits"));
 	}
 
 	public void init() {
@@ -75,7 +73,7 @@ public class BleachCreditsScreen extends WindowScreen {
 
 		getWindow(0).addWidget(new WindowTextWidget("- Main Developer -", true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 65, 0xe0e0e0));
 		getWindow(0).addWidget(new WindowTextWidget(
-				new LiteralText("Bleach").styled(s -> s.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new LiteralText("arabfunny")))),
+				new LiteralText("Bleach").styled(s -> s.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new LiteralText("BleachDrinker420")))),
 				true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 80, 0x00a000));
 
 		getWindow(0).addWidget(new WindowTextWidget("- Contributors -", true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 100, 0xe0e0e0));
@@ -98,18 +96,14 @@ public class BleachCreditsScreen extends WindowScreen {
 				new LiteralText("ThePapanoob").styled(s -> s.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new LiteralText("\u00a77https://github.com/thepapanoob\n\n\u00a7fAdded Projectiles mode in killaura")))),
 				true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 175, 0x00a0a0));
 
-		getWindow(0).addWidget(new WindowTextWidget("- Donators/Boosters -", true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 195, 0xe0e0e0));
+		getWindow(0).addWidget(new WindowTextWidget("- CrystalHack Dev -", true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 195, 0xe0e0e0));
 		int y = 210;
-		if (boosterList != null) {
-			boostersLoaded = true;
-			for (ImmutablePair<Boolean, String> i: boosterList) {
-				getWindow(0).addWidget(new WindowTextWidget(getBoosterText(i), true, WindowTextWidget.TextAlign.MIDDLE, w / 2, y, 0));
-				y += 12;
-			}
-		} else {
-			getWindow(0).addWidget(new WindowTextWidget("\u00a77Loading..", true, WindowTextWidget.TextAlign.MIDDLE, w / 2, y, 0));
-			y += 12;
-		}
+		getWindow(0).addWidget(new WindowTextWidget(
+				new LiteralText("JohanDev").styled(s -> s.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new LiteralText("\u00a7fCrystalHack Developer\n\n\u00a77https://github.com/JohanDevv")))),
+				true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 210, 0x00a0a0));
+		getWindow(0).addWidget(new WindowTextWidget(
+				new LiteralText("Sssnipa").styled(s -> s.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new LiteralText("\u00a7fEmotional Support & Ideas")))),
+				true, WindowTextWidget.TextAlign.MIDDLE, w / 2, 222, 0x00a0a0));
 
 		for (WindowWidget widget: getWindow(0).getWidgets()) {
 			if (!(widget instanceof WindowScrollbarWidget)) {
