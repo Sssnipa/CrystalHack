@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "crystal-blachhack",
+  "version": "${version}",
+
+  "name": "CrystalHack",
+  "description": "gamer obama utility mod",
+  "authors": [
+    "Bleach",
+    "JohanDevv"
+  ],
+  "contact": {
+    "homepage": "https://github.com/JohanDevv/CrystalHack",
+    "sources": "https://github.com/JohanDevv/CrystalHack"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/bleachhack/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "org.bleachhack.BleachHack"
+    ]
+  },
+  "mixins": [
+    "bleachhack.mixins.json"
+  ],
+  "accessWidener" : "bleachhack.accesswidener",
+  "depends": {
+    "minecraft": "~1.17.1"
+  }
+}

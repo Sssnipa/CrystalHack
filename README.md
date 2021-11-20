@@ -26,24 +26,13 @@ Approved by Obama
 ## Installation
 ### For normal people
 
-Download [Fabric for Minecraft 1.17](https://fabricmc.net/use/).
-Download the latest version of BleachHack for your Minecraft version [from the website](https://bleachhack.org/).
-
-
-On Windows: Type %appdata% into the Windows search bar; open the folder that comes up and then open '.minecraft'.
-
-On Mac: Click on the desktop, press Command+Shift+G, type ~/Library and press enter; then open 'Application Support' and finally '.minecraft'.
-
-On Linux: in a terminal window, type 'xdg-open ~/.minecraft'... or if you like working at the commandline, 'cd ~/.minecraft'.
-
-Then inside that folder, you should see a folder named 'mods'. (If you don't see one, make sure you've installed Fabric already and started Minecraft again once).
-That's where you'll put any mods you want to install.
+Follow the Instructions on the [download page](https://bleachhack.org/downloads.html).
 
 ### For (200 IQ) developers
 
-Download the project.
-Start A Command Prompt/Terminal in the BleachHack-Fabric-(*Version*) folder.
-Generate the needed files for your preferred IDE.
+Download the branch with the version you want to work on.  
+Start A Command Prompt/Terminal in the main folder.  
+Generate the needed files for your preferred IDE.  
 
 ***Eclipse***
 
@@ -56,14 +45,27 @@ Generate the needed files for your preferred IDE.
 
   Start a new workspace in eclipse.
   Click File > Import... > Gradle > Gradle Project.
-  Select the BleachHack-Fabric-(*Version*) folder.
+  Select the Main folder.
+  
+***IntelliJ***
+
+  On Windows:
+  > gradlew genIdeaWorkspace
+  
+  On Linux:
+  > chmod +x ./gradlew  
+  >./gradlew genIdeaWorkspace
+
+  In idea click File > Open.
+  Select build.gradle in the main folder.
+  Select Open as Project.
 
 ***Other IDE's***
 
   Use [this link](https://fabricmc.net/wiki/tutorial:setup) for more information.
-  It should be pretty similar to the eclipse setup.
+  It should be pretty similar to the eclipse and idea setup.
   
-###### *Note: Java 16 is required for 1.17+*
+###### *To get the source code of Pre-1.17 versions, use [this](https://github.com/BleachDrinker420/BleachHack/tree/de55562e94) commit and select the folder of the version you want.*
 
 ## Recommended Mods
 
