@@ -26,7 +26,7 @@ Approved by Obama
 ## Installation
 ### For normal people
 
-Follow the Instructions on the [download page](https://bleachhack.org/downloads.html).
+Follow the Instructions on the [download page](https://github.com/JohanDevv/CrystalHack/releases).
 
 ### For (200 IQ) developers
 
